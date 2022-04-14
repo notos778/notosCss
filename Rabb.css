@@ -1,0 +1,913 @@
+@font-face {
+    font-family: 'Binggrae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*  그라데이션 배경 */
+html {
+
+  background: linear-gradient(to bottom, #F7EBD6, #F5CE8C, #C2A36E);
+                            /* 평상시 베이지 컬러 to bottom,  #CDA27D, #D7AC87, #FFE9D6 
+                                                                      #EB3232, #FFE6E6, #5CE75C*/
+  height: auto !important;
+
+}
+
+body, html.darkmode body {
+
+  letter-spacing: -0.05em !important;
+
+  background: transparent;
+
+  font-family: 'Jua', sans-serif;
+
+/*아래는 눈 효과를 위해서*/
+
+background-image: url('https://upload.tgd.kr/20220117/8c0073ca42aed78dd567938a2a4959d4.png'), url('https://upload.tgd.kr/20211219/cbab43d3d8ce3cfa7c20bba243eb93ff.png');
+
+/* https://cdn.discordapp.com/attachments/499752918086320130/553844830699126795/stars.png 별 */
+/* https://upload.tgd.kr/20211219/bb98cae282b4cd1cc5fe91e714a5654b.png 눈*/
+/* https://upload.tgd.kr/20211219/cbab43d3d8ce3cfa7c20bba243eb93ff.png 눈 sub */
+    -webkit-animation: snow 15s linear infinite;
+
+    -moz-animation: snow 15s linear infinite;
+
+    -ms-animation: snow 15s linear infinite;
+
+    animation: snow 15s linear infinite;
+
+}
+
+/* 눈내리는 효과 끝 */
+
+:root{
+    --mainColor: #A06641;     /* 초코색 */
+    --subColor: #F8E5D4;      /* 연한 베이지색 */
+    --highlightColor: #3e372d;    /* 갈색 */
+}
+
+body, html.darkmode body {
+    height: auto;
+    font-family: 'Binggrae';
+}
+
+
+/* 버튼 */
+.btn-primary{
+    background-color: var(--highlightColor);
+    border-color: inherit;
+    opacity: 80%;
+}
+
+.btn-primary:hover, .btn-primary:focus{
+    background-color: var(--highlightColor);
+    border-color: inherit;
+    opacity: 100%;
+}
+
+/* 기존 우측 하단 to top 버튼 제거*/
+#movetotop > img{
+    display: none;
+}
+
+html { scroll-behavior: smooth; }
+
+
+/* ===페이지 최상단 메뉴=== */
+
+/* 테두리 */
+header #header-bar>.row{
+    border-right: 0px;
+    border-radius: 17px;
+    box-shadow: 0 0 0 4px #fff;
+    border: 2px dashed #A06641; /*점선*/
+    padding-bottom: 0em;
+}
+
+   #main .menu-wrapper{
+   
+   border-radius: 17px;
+}
+
+#main #main-content>div.frame{
+    border-radius: 17px;
+    border-right: 0px;
+    border-bottom: 0px;
+    /* 설정시 그림자 효과처럼 삐져나옴 */
+}
+
+#main .menu-wrapper>.header {
+
+    border-radius: 12px 12px 0 0;
+
+}
+
+#main .menu-wrapper a:nth-last-child(1) {
+
+    border-radius: 0px 0px 13px 13px;
+}
+
+
+/* 상단 빵공장 이미지 */
+header:before{
+    display: block;
+    width:100%;
+    height: 0px;
+    margin-top: 0px;
+    background-size: contain;
+    /* background: url(https://upload.tgd.kr/20211219/3165a5911ab93699165ee8aaf772f746.png) no-repeat; */
+    background-position: 50% center;
+    content: "";
+}
+
+/* 배너 2 */
+/* header:before{
+    display: block;
+    width:100%;
+    height: 100px;
+    background-size: contain;
+    background: url("https://upload.tgd.kr/20211218/9ef3aada85aeeb0b34f8efff85a0ff96.png") no-repeat;
+    background-position: 60% center;
+    content: "";
+} */
+
+/* 로고 */
+header .row > div:nth-child(1) > a{
+    margin-top:5.2em;
+}
+
+/* 로고 영역 사이즈 조정 */
+body > header > div:nth-child(1) > div > div.col-xs-4{
+    width: 45%;
+}
+
+/* 트게더 검색 영역 사이즈 조정 */
+body > header > div:nth-child(1) > div > div.col-xs-8{
+    width: 55%;
+}
+
+/* 검색창 위치 수정 */
+header #right-search-form{
+padding: 8.5em 0 0;
+}
+
+/* 기존 로고 안보이게 처리 */
+body > header > div:nth-child(1) > div > div.col-xs-4 > a > img{
+    display: none;
+}
+
+/* 검색창 테두리선 색상 */
+header #right-search-form>input[type=text]{
+    border: 3px solid #ba8b66;
+border-radius: 15px;
+}
+
+/* 돋보기 아이콘 색상 */
+header #right-search-form>#right-search-btn{
+    color: #ba8b66;
+}
+
+/* 상단 바 위쪽 선 색상 */
+/* header #header-bar>.row{
+    border-top: 5px solid var(--mainColor);
+} */
+
+/* 광고 아이콘 색상 */
+header #header-bar #header-top-notice strong.notice-badge{
+    background: var(--mainColor);
+}
+
+
+
+/* ===왼쪽 네비게이션=== */
+
+#main .menu-wrapper {
+    border-right: 0px solid #ebeae8;
+    border-bottom: 0px solid #ebeae8;
+    margin-bottom: 0.8em;
+}
+
+/* 상단 전체메뉴 탭 배경색상 */
+#main .menu-wrapper>.header{
+    background: var(--mainColor);
+}
+
+/* 네비게이션 뒷배경 색상 */
+#main .menu-wrapper .spacer{
+    background: var(--subColor);
+}
+
+/* 아이콘 색상 */
+#main-menu > div.menu-wrapper > a > em{
+    color: var(--mainColor);
+}
+
+
+
+
+
+/* ===게시판=== */
+
+
+/* 위로가기 버튼 라빵이 */
+#movetotop img{
+     display:none;
+}
+
+#movetotop:hover{
+transform: scale(1.10); 
+transition: .20s;
+}
+
+#movetotop{
+display: inline-block;
+opacity:1;
+background:url(https://s10.gifyu.com/images/press-to-up-1.png);
+width: 178px; height: 250px;background-size: contain;
+
+}
+
+
+
+/* 상단 프로필 사진 이미지 */
+#board-info #board-info-profile-img{
+    width: auto;
+    height: 8.5em;
+    border-radius: 50%;
+    margin: -1.8em 0 0 0;
+    margin-right: 10px;
+    float:left !important;
+    position:absolute;
+    z-index: 100;
+}
+
+/* 상단 카테고리 배경색상 */
+#article-list #article-list-category{
+    background: var(--subColor);
+    border: 2px solid #ba8b66;
+    border-radius: 12px;
+    padding-bottom: 0em;
+   
+}
+
+/* 상단 네비게이션 글씨 여백, 배경 색상 */
+#article-list #article-list-category>a{
+    padding: 11px 13px;
+    background: var(--subColor);
+    border-radius: 14px;
+}
+
+/* 상단 네비게이션 홈버튼 배경 색상 */
+#article-list #article-list-category>a.active, #article-list #article-list-category>a:hover{
+    background: var(--subColor);
+}
+
+/* 상단 네비게이션 윗쪽 선 색상 */
+/*  #article-list #article-list-category{
+    border-top: 2px solid var(--mainColor);
+} */
+
+/* 추천 아이콘 색상 */
+#article-list>.article-list-row>.item>.list-header>span{
+    background-color: #777;
+}
+
+/* 게시글 테두리*/
+#article-list>.article-list-row.notice{
+     border: 2px solid #ba8b66;
+     margin-top: 1px;
+     margin-bottom: 1px;
+     border-radius: 10px;
+}
+
+#article-list>.article-list-row>.item>.list-checkbox{
+    border-radius: 10px 0px 0px 10px;
+}
+#article-list>.article-list-row>.item>.list-time{
+    border-radius: 0px 10px 10px 0px;
+}
+
+
+/* 읽은 게시물 글씨 색상 */
+#article-list>.article-list-row>.item>.list-title>a:visited {
+     color: #858585 !important;
+}
+
+
+/* 댓글 아이콘 색상 */
+#article-list>.article-list-row>.item>.list-title>small.comment-count{
+    color: var(--highlightColor);
+}
+
+/* 닉네임 색상 */
+#article-list>.article-list-row>.item>.list-title>.list-writer.logged>span{
+    color: var(--highlightColor);
+}
+
+/* 페이징 버튼(현재 페이지) */
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
+}
+
+/* 페이징 버튼(다른 페이지) */
+.pagination>li>a, .pagination>li>span{
+    color: var(--mainColor);
+}
+
+/* 공지글 숨기기 눈 */
+#article-list #article-option-area>#article-option-area-toggle-btn {
+     border-radius: 50%;
+}
+
+
+/* ===게시글 === */
+
+/* 게시글 뒷 배경 키즈나 라빵 */
+#article-list{
+     background-image: url(https://s10.gifyu.com/images/article-background-1.png);
+     background-position: bottom;
+     background-repeat: no-repeat;
+}
+
+/* 인기글 배경 색 */
+#article-list>.article-list-row.hot{
+     background-color: #ebcaad59;
+}
+
+
+/* 게시글 상단 선 색상 */
+#article-content-wrapper>.header{
+    border-top: 2px solid var(--mainColor);
+}
+
+/* 하트 애니메이션 효과 */
+small.favo i.fa.fa-heart {
+
+    animation: heartbeat 1s infinite;
+    color: #ffabab;
+}
+
+@keyframes heartbeat {
+
+    0% { transform: scale(1); }
+
+    30% { transform: scale(1.25); }
+
+    42% { transform: scale(0.9); }
+
+    60% { transform: scale(1.15); }
+
+    85% { transform: scale(0.95); }
+
+    100% { transform: scale(1); }
+
+}
+
+
+/* 댓글 정보 */
+#article-reply-area > div.header > h5{
+    color: var(--highlightColor);
+}
+
+/* 닉넴 색상 */
+#article-reply-area #reply-real-area .reply>.reply-header>.reply-writer.logged, #article-reply-area #reply-best-area .reply>.reply-header>.reply-writer.logged{
+    color: var(--highlightColor);
+}
+
+/* 댓글 메뉴 */
+#article-reply-area #reply-real-area .reply>.reply-header>.reply-menu a, #article-reply-area #reply-best-area .reply>.reply-header>.reply-menu a{
+    color: var(--mainColor);
+}
+
+/* ===하단 푸터=== */
+
+/* 카피라이트 글자 색상 */
+body > footer{
+    color: #000000
+}
+
+/* 카피라이트 링크 글자 색상 */
+body > footer > div > span > a{
+    color: #000000;
+}
+
+/* 추천 비추천 버튼 */
+.vote-btn[data-type="up"] {
+
+    border: none;
+
+    font-size: 0;
+
+    outline: 0 !important;
+
+}
+
+
+
+.vote-btn[data-type="up"]:hover {
+
+    background: none !important;
+
+}
+
+
+
+.vote-btn[data-type="up"]::before {
+
+    display: inline-block;
+
+    background: white;
+
+    border: solid #78E150 1px;
+
+    float: left;
+
+    width: 60px;
+
+    height: 60px;
+
+    border-radius: 60px;
+
+    font-size: 26pt;
+
+    content: "\f164";
+
+    padding-top: 17px;
+
+    padding-left: 2px;
+
+    font: normal 22px/1 FontAwesome;
+
+    -moz-transition: color .2s ease;
+
+    -o-transition: color .2s ease;
+
+    -ms-transition: color .2s ease;
+
+    -webkit-transition: color .2s ease;
+
+    transition: color .2s ease;
+
+    color: #78E150;
+
+}
+
+
+
+.vote-btn[data-type="up"]:hover::before {
+
+    background: #78E150;
+
+    color: white;
+
+}
+
+
+
+.vote-btn[data-type="up"]:focus::before {
+
+    color: #78E150;
+
+}
+
+
+
+.vote-btn[data-type="up"]:focus:hover::before {
+
+    color: white;
+
+}
+
+
+
+.vote-btn[data-type="up"] span {
+
+    float: left;
+
+    padding-top: 14px;
+
+    padding-left: 15px;
+
+    font-size: 22px;
+
+    color: #78E150;
+
+}
+
+
+
+.vote-btn[data-type="down"] {
+
+    border: none;
+
+    font-size: 0;
+
+    outline: 0 !important;
+
+}
+
+/* 여기서 부터 비추천 */
+
+.vote-btn[data-type="down"]:hover {
+
+    background: none !important;
+
+}
+
+
+
+.vote-btn[data-type="down"]::before {
+
+    display: inline-block;
+
+    background: white;
+
+    border: solid #6E6ED7 1px;
+
+    float: left;
+
+    width: 60px;
+
+    height: 60px;
+
+    border-radius: 60px;
+
+    font-size: 26pt;
+
+    content: "\f165";
+
+    padding-top: 17px;
+
+    padding-left: 2px;
+
+    font: normal 22px/1 FontAwesome;
+
+    -moz-transition: color .2s ease;
+
+    -o-transition: color .2s ease;
+
+    -ms-transition: color .2s ease;
+
+    -webkit-transition: color .2s ease;
+
+    transition: color .2s ease;
+
+    color: #6E6ED7;
+
+}
+
+
+
+.vote-btn[data-type="down"]:hover::before {
+
+    background: #6E6ED7;
+
+    color: white;
+
+}
+
+
+
+.vote-btn[data-type="down"]:focus::before {
+
+    color: #6E6ED7;
+
+}
+
+
+
+.vote-btn[data-type="down"]:focus:hover::before {
+
+    color: white;
+
+}
+
+
+
+.vote-btn[data-type="down"] span {
+
+    float: left;
+
+    padding-top: 14px;
+
+    padding-left: 15px;
+
+    font-size: 22px;
+
+    color: #6E6ED7;
+
+}
+
+/* 추천 비추천 버튼 끝 */
+
+
+
+
+
+/* ===============여기서부터는 예능=============== */
+:root{
+    --pre-comment: "빵틀에 남은  ";
+    --post-comment: "g의 부스러기";
+}
+
+#board-info #viewers-area #viewers:before{
+    content: var(--pre-comment);
+    cursor: text;
+}
+
+#board-info #viewers-area #viewers:after{
+    content: var(--post-comment);
+    cursor: text;
+}
+
+/* 접속자 수 색상 시작 */
+
+#board-info #viewers-area {
+
+color: #FF9100;
+
+}
+
+/* 접속자 수 색상 시작 */
+
+#board-info #score-area {
+
+color: #52E252;
+
+}
+
+
+/* ===========테스트 필드=========== */
+
+
+
+/* 마우스 커서 */
+
+html,
+
+body,
+
+.fr-popup.emoticons,
+
+.fr-top,
+
+select.form-control,
+
+input[type=checkbox],
+
+input[type=radio],
+
+.opt
+
+{
+
+cursor: url(https://upload.tgd.kr/20211218/5ab82cd9099550c2a9ddd2fadfc1cd6d.png) 0 0, auto !important;
+
+}
+
+
+#right-search-form>#right-search-btn,
+
+#board-info #board-info-bottom #addFavoriteBtn,
+
+#article-list #article-option-area>#article-option-area-toggle-btn,
+
+#article-list>.article-list-row>.item>.list-title>.list-writer>span,
+
+.reply > .reply-header > .reply-writer.logged,
+
+.reply-menu,
+
+.btn,
+
+.fr-toolbar .fr-command.fr-btn,
+
+.fr-popup .fr-command.fr-btn,
+
+.fr-view img,
+
+.pull-left,
+
+a {
+
+cursor: url(https://upload.tgd.kr/20211218/c86a1f4ce42a2a00f5638e5ea66c68d1.png) 0 0, auto !important;
+
+}
+
+
+
+span#viewers,
+
+#article-list #boardSearchForm .form-control,
+
+.fr-view,
+
+.fr-box.fr-basic.fr-element,
+
+input[type='text']
+
+{
+
+cursor: url(https://upload.tgd.kr/20211218/5ab82cd9099550c2a9ddd2fadfc1cd6d.png) 0 0, auto !important;
+
+}
+
+/* 가지 https://upload.tgd.kr/20211218/5ab82cd9099550c2a9ddd2fadfc1cd6d.png */
+/* 낫토 https://upload.tgd.kr/20211218/c86a1f4ce42a2a00f5638e5ea66c68d1.png */
+
+
+
+/* 눈내리기 효과 적용 */
+@keyframes snow {
+
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+
+ 100% {background-position: 500px 1500px, 400px 800px, 300px 600px;}
+                                              /* 500px 1500px, 400px 800px, 300px 600px; */
+}
+
+@-moz-keyframes snow {
+
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+
+100% {background-position: 500px 1500px, 400px 800px, 300px 600px;}
+
+}
+
+@-webkit-keyframes snow {
+
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+
+ 50% {}
+
+ 100% {background-position: 500px 1500px, 400px 800px, 300px 600px;}
+
+}
+
+@-ms-keyframes snow {
+
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+
+ 100% {background-position: 500px 1500px, 400px 800px, 300px 600px;}
+
+}
+
+
+
+/* 상단 배너 크기 */
+#board-info #board-info-bottom a{
+     font-size: 14px;
+}
+
+#board-info{
+     height: 7em;
+}
+    
+#board-info h1{
+     font-size: 30px;
+}
+
+#board-info h1{
+     margin-left: 17%
+}
+
+#board-info #board-info-bottom{ 
+     margin-left: 15%;
+     margin-top: 10px;
+}
+
+
+/* 프로필 이미지 확대 효과 */
+#board-info #board-info-profile-img:hover {
+
+    transform: scale(2.15); /* 크기가 커짐 */
+
+    transition: .70s; /* 0.2초에 걸쳐서 부드럽게 애니메이션이 진행 */
+
+}
+
+
+/* 빵공장 이미지 다듬기 */
+header .row > div:first-child > a {
+
+    background-repeat: no-repeat;
+
+    display: block;
+
+    width: 200px;
+
+    height: 80px;
+
+    background-image: url(https://s10.gifyu.com/images/PC-logo-2.png);
+
+    /* background-size: auto 50px; */
+} 
+
+
+/* 트게더 카테고리 */
+@media (min-width: 1400px){
+#article-list #article-list-category.can-float{
+     border-radius: 12px;
+     border: 2px solid #D7AC87;
+     border-top: 2px solid #D7AC87;
+     margin-top: 155px;
+     width: 155px;
+}
+}
+
+/* 게시글 커서 올리면 확대 효과 */
+#article-list>.article-list-row:hover {
+
+    transform: scale(1.03);
+    border: 1px solid #3e372d;
+    border-radius: 12px;
+
+}
+
+#main .menu-wrapper>a:hover, #main .menu-wrapper #fav-shortcut-area>a:hover{
+    transform: scale(1.03);
+}
+
+/*게시글 밑 그림자 제거*/
+#article-list>.article-list-row>.item>.list-checkbox, #article-list>.article-list-row>.item>.list-header, #article-list>.article-list-row>.item>.list-category, #article-list>.article-list-row>.item>.list-title, #article-list>.article-list-row>.item>.list-blocked, #article-list>.article-list-row>.item>.list-time{
+    border: 0px;
+}
+
+html.darkmode #article-list>.article-list-row>.item>.list-checkbox, html.darkmode #article-list>.article-list-row>.item>.list-header, html.darkmode #article-list>.article-list-row>.item>.list-category,html.darkmode #article-list>.article-list-row>.item>.list-title,html.darkmode #article-list>.article-list-row>.item>.list-blocked,html.darkmode #article-list>.article-list-row>.item>.list-time{
+    border: 0px;
+}
+
+
+/* 짭은검 제거 */
+img[src="https://static-cdn.jtvnw.net/badges/v1/c58112c2-d2a9-407e-9fe4-e92b73ee90c4/1"] {
+
+    display: none;
+
+}
+
+/* 진은검 제거 */
+img[src="https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1"] {
+
+    display: none;
+
+}
+
+/* 프로필 이미지 사진 마스킹 */
+#board-info #board-info-profile-img {
+
+    content: url(https://s10.gifyu.com/images/ezgif.com-gif-makerb4443dd0fcadf45e.gif);
+}
+
+/* 왼하단 이미지 */
+/* body::before {
+    content: '';
+    display: block;
+    position: absolute;
+left: 31px;
+bottom: 0;
+    width: 400px;
+  height: 400px;
+background-image: url(https://upload.tgd.kr/20211219/bc58a8a6a3b82a4d07607344bb6cebd8.png);
+background-repeat: no-repeat;
+background-size: contain;
+} */
+
+/*  #header-menu-left:after {
+    content: '';
+    display: block !important;
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background: url(https://upload.tgd.kr/20220210/3e991a0f751e0d53087c80f03ccfb661.png) 0 0/60px no-repeat;
+    top: -65px;
+    right: -75px;
+    transition: 0.5s;
+    transform: scale(1.7);
+    z-index: -1;
+  } */
+
+/* #main {
+	width: 1150px;
+} */
+
+/*방송알림*/
+#board-info:after {
+    content: '';
+    display: block !important;
+    position: absolute;
+    width: 200px;
+    height: 30px;
+    background: url(https://s10.gifyu.com/images/live-noti-2.png) 0 0/80px no-repeat;
+    top: 92px;
+    right: 460px;
+    transition: 0.5s;
+    transform: scale(1.7);
+    z-index: 50;
+  }
+
+#board-info #board-info-bottom a{
+   color: #777;
+}
